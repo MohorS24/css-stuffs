@@ -1,0 +1,29 @@
+<html>
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <link rel="stylesheet" type="text/css" href="style.css">
+        <title> Cursor In & Out Ripple Effect Over Card </title>
+    </head>
+
+    <body>
+        <div class="container">
+            <div class="box" style="--clr:#e81cff"></div>
+            <div class="box" style="--clr:#fadb2d"></div>
+            <div class="box" style="--clr:#17ffff"></div>
+
+            <script>
+                let box = document.querySelectorAll('.box');
+                box.forEach( box => {
+                    box.onmousemove = function(e) {
+                        let x = e.pageX - box.offsetLeft;
+                        let y = e.paegY - box.offsetTop;
+
+                        box.style.setProperty('--x', x+'px');
+                        box.style.setProperty('--y', y+'px');
+                    }
+                } )
+            </script>
+        </div>
+    </body>
+</html>
