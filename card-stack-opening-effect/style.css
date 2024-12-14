@@ -1,0 +1,93 @@
+*
+{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body
+{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 100vh;
+    background: #000205;
+}
+
+.container
+{
+    position: relative;
+    width: 400px;
+    height: 300px;
+}
+
+.container .card
+{
+    position: absolute;
+    top: calc(50% - 150px);
+    left: 50%;
+    width: 300px;
+    height: 300px;
+    background: #404040;
+    transform: translateX(-50%) translateY(calc(50px * var(--i))) rotate(40deg) skew(-20deg, -10deg) scale(0.6);
+    box-shadow: 25px 25px 100px rgba(0, 0, 0, 0.2);
+    z-index: calc(-1 * var(--i));
+    transition: 0.5s;
+}
+
+.container .card:nth-child(2) 
+{
+    opacity: 0.8;
+}
+
+.container .card:nth-child(3)
+{
+    opacity: 0.6;
+}
+
+.container .card:nth-child(4)
+{
+    opacity: 0.4;
+}
+
+.container .card:nth-child(5)
+{
+    opacity: 0.2;
+}
+
+
+.container:hover .card
+{
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    opacity: 1;
+    z-index: 1;
+    transform: translateX(calc(-50% + calc(320px * var(--i)))) translateY(-50%) rotate(0deg) skew(0deg, 0deg) scale(1);
+    box-shadow: 25px 25px 100px rgba(0, 0, 0, 0.2);
+}
+
+.container .card .content
+{
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.container .card .content ion-icon
+{
+    font-size: 6em;
+    color: #e1ff6b;
+    height: 200px;
+    width: 150px;
+}
+
+.container .card .content h2
+{
+    color: #ffffff;
+    text-transform: uppercase;
+    margin-top: 10px;
+    font-weight: 500;
+    letter-spacing: 0.15em;
+}
